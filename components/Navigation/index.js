@@ -2,7 +2,7 @@ import NextLink from "next/link";
 import styled from "styled-components";
 
 const Root = styled.nav`
-  height: 80px;
+  height: 50px;
   display: flex;
   background: #ccc;
   align-items: center;
