@@ -1,3 +1,4 @@
+import useImageSize from "@/utils/useImageSize";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -26,14 +27,15 @@ const Artist = styled.div`
 `;
 
 function SpotLight({ image, artist, width, height }) {
+  const imageSize = useImageSize(width, height, 0.3);
   return (
     <Root>
       <Piece>
         <Image
           src={image}
           alt="spotlight piece"
-          width={width}
-          height={height}
+          width={imageSize.width}
+          height={imageSize.height}
         />
       </Piece>
       <Artist>{artist}</Artist>

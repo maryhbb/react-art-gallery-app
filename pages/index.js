@@ -8,38 +8,17 @@ const Root = styled.main`
   align-items: center;
 `;
 
-
-
-// const LoadingWrapper = styled.div`
-//   height: 100vh;
-//   display: grid;
-//   place-items: center;
-//   font-size: 48px;
-//   color: #888;
-// `;
-
-// const URL = "https://example-apis.vercel.app/api/art";
-
-export default function SpotlightPage( {data} ) {
-  // const { data, error, isLoading } = useSWR(URL);
-
-  // if (error) return <div>An Error occurred!</div>;
-  // if (isLoading) return <LoadingWrapper>Loading...</LoadingWrapper>;
-
+export default function SpotlightPage({ data }) {
   const randomPiece = data[Math.trunc(Math.random() * data.length)];
-
-  
 
   return (
     <Root>
-      
       <SpotLight
         image={randomPiece.imageSource}
         artist={randomPiece.artist}
-        width={randomPiece.dimensions.width * 0.5}
-        height={randomPiece.dimensions.height * 0.5}
+        width={randomPiece.dimensions.width}
+        height={randomPiece.dimensions.height}
       />
-      {/* <ArtPieces pieces={data} /> */}
     </Root>
   );
 }
