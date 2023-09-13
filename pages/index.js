@@ -8,10 +8,7 @@ const Root = styled.main`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  text-align: center;
-  color: #888;
-`;
+
 
 // const LoadingWrapper = styled.div`
 //   height: 100vh;
@@ -35,7 +32,7 @@ export default function SpotlightPage( {data} ) {
 
   return (
     <Root>
-      <Title>Art Gallery</Title>
+      
       <SpotLight
         image={randomPiece.imageSource}
         artist={randomPiece.artist}

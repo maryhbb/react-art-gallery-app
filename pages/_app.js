@@ -11,6 +11,10 @@ const LoadingWrapper = styled.div`
   font-size: 48px;
   color: #888;
 `;
+const Title = styled.h1`
+  text-align: center;
+  color: #888;
+`;
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -20,15 +24,14 @@ export default function App({ Component, pageProps }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
   if (error) return <div>An Error occurred!</div>;
-  if (isLoading ) return <LoadingWrapper>Loading...</LoadingWrapper>;
-
-  
+  if (isLoading) return <LoadingWrapper>Loading...</LoadingWrapper>;
 
   return (
     <>
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
         <Layout>
+          <Title>Art Gallery</Title>
           <Component {...pageProps} data={data} />
         </Layout>
       </SWRConfig>

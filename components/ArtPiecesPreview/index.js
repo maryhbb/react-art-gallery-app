@@ -2,7 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useWindowSize } from "@uidotdev/usehooks";
 
-
 const Root = styled.div`
   display: inline-block;
   border: 2px solid #ccc;
@@ -14,12 +13,11 @@ const Caption = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 1rem;
-  font-size: 2rem;
+  color: #ccc;
 `;
 
 function ArtPiecesPreview({ image, title, artist, width, height }) {
-
-  const viewWidth = useWindowSize().width * 0.8;
+  const viewWidth = useWindowSize().width * 0.6;
   const aspectRatio = width / height;
   const actualHeight = viewWidth / aspectRatio;
 
