@@ -15,10 +15,11 @@ function ArtPieces({ pieces }) {
         return (
           <ArtPiecesPreview
             key={slug}
+            slug={slug}
             image={imageSource}
             title={name}
             artist={artist}
-            width={dimensions.width }
+            width={dimensions.width}
             height={dimensions.height}
           />
         );
