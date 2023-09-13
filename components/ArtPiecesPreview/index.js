@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { useWindowSize } from "@uidotdev/usehooks";
+
 
 const Root = styled.div`
   display: inline-block;
@@ -16,9 +18,14 @@ const Caption = styled.div`
 `;
 
 function ArtPiecesPreview({ image, title, artist, width, height }) {
+
+  const viewWidth = useWindowSize().width * 0.8;
+  const aspectRatio = width / height;
+  const actualHeight = viewWidth / aspectRatio;
+
   return (
     <Root>
-      <Image src={image} alt={title} width={width} height={height} />
+      <Image src={image} alt={title} width={viewWidth} height={actualHeight} />
       <Caption>
         <strong>{title}</strong>&nbsp;by&nbsp;<em>{artist}</em>
       </Caption>

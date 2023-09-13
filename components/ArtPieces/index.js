@@ -18,8 +18,8 @@ function ArtPieces({ pieces }) {
             image={imageSource}
             title={name}
             artist={artist}
-            width={dimensions.width * 0.75}
-            height={dimensions.height * 0.75}
+            width={dimensions.width }
+            height={dimensions.height}
           />
         );
       })}
