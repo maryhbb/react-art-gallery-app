@@ -42,6 +42,19 @@ const Artist = styled.div`
   font-weight: bold;
   font-size: 1.5vw;
 `;
+const ColorPalette = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+`;
+
+const Color = styled.li`
+  border-radius: 50%;
+  width: 3vw;
+  aspect-ratio: 1/1;
+  background-color: ${(props) => props.value};
+`;
 
 function ArtPieceDetails(props) {
   const imageSize = useImageSize(
@@ -64,6 +77,13 @@ function ArtPieceDetails(props) {
           width={imageSize.width}
           height={imageSize.height}
         />
+
+        <ColorPalette>
+          {props.colors.map((color) => (
+            <Color key={color} value={color} title={color} />
+          ))}
+        </ColorPalette>
+
         <Title>{props.name}</Title>
         <Details>
           by {props.artist} | {props.genre} | {props.year}
