@@ -8,7 +8,8 @@ const Root = styled.div`
   align-items: center;
 `;
 
-function ArtPieces({ pieces }) {
+function ArtPieces({ pieces, artPieceInfo, onToggleFavorite }) {
+
   return (
     <Root>
       {pieces.map(({ slug, imageSource, name, artist, dimensions }) => {
@@ -21,6 +22,8 @@ function ArtPieces({ pieces }) {
             artist={artist}
             width={dimensions.width}
             height={dimensions.height}
+            artPieceInfo={artPieceInfo}
+            onToggleFavorite={onToggleFavorite}
           />
         );
       })}

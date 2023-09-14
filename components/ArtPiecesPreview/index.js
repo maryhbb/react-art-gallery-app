@@ -2,12 +2,14 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 import useImageSize from "@/utils/useImageSize";
+import FavoritButton from "../FavoriteButton";
 
 const Root = styled.div`
   display: inline-block;
   border: 2px solid #ccc;
   padding: 2rem;
   overflow: hidden;
+  position: relative;
 `;
 
 const Caption = styled.div`
@@ -17,11 +19,25 @@ const Caption = styled.div`
   color: #ccc;
 `;
 
-function ArtPiecesPreview({ image, title, artist, width, height, slug }) {
-  const imageSize = useImageSize(width, height);
+function ArtPiecesPreview({
+  image,
+  title,
+  artist,
+  width,
+  height,
+  slug,
+  artPieceInfo,
+  onToggleFavorite,
+}) {
+  const imageSize = useImageSize(width, height,0.4);
 
   return (
     <Root>
+      <FavoritButton
+        slug={slug}
+        artPieceInfo={artPieceInfo}
+        onToggleFavorite={onToggleFavorite}
+      />
       <Link href={`/art-pieces/${slug}`}>
         <Image
           src={image}

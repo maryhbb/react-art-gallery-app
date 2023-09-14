@@ -26,7 +26,7 @@ const BackButton = styled.button`
   }
 `;
 
-function ArtPieceDetailsPage({ data }) {
+function ArtPieceDetailsPage({ data, artPieceInfo, onToggleFavorite }) {
   const router = useRouter();
 
   const match = data.find((piece) => {
@@ -36,7 +36,11 @@ function ArtPieceDetailsPage({ data }) {
   return (
     <Root>
       <BackButton onClick={router.back}>Back</BackButton>
-      <ArtPieceDetails {...match} />
+      <ArtPieceDetails
+        {...match}
+        artPieceInfo={artPieceInfo}
+        onToggleFavorite={onToggleFavorite}
+      />
     </Root>
   );
 }

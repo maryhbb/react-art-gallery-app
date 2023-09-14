@@ -8,11 +8,13 @@ const Root = styled.section`
   padding: 1rem;
   display: flex;
   gap: 1rem;
+  
 `;
 
 const Piece = styled.div`
   flex: 1;
   padding: 1rem;
+  position: relative;
 `;
 
 const Artist = styled.div`
@@ -24,7 +26,7 @@ const Artist = styled.div`
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 1.5vw;
 `;
 
 function SpotLight({

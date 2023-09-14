@@ -1,7 +1,13 @@
 import ArtPieces from "../../components/ArtPieces";
 
-function ArtPiecesPage({ data }) {
-  return <ArtPieces pieces={data} />;
+function ArtPiecesPage({ data, artPieceInfo, onToggleFavorite }) {
+  return (
+    <ArtPieces
+      pieces={data}
+      artPieceInfo={artPieceInfo}
+      onToggleFavorite={onToggleFavorite}
+    />
+  );
 }
 
 export default ArtPiecesPage;

@@ -1,6 +1,7 @@
 import useImageSize from "@/utils/useImageSize";
 import Image from "next/image";
 import styled from "styled-components";
+import FavoritButton from "../FavoriteButton";
 
 const Root = styled.section`
   background-color: #999;
@@ -16,16 +17,17 @@ const Piece = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 `;
 
 const Title = styled.strong`
-  font-size: 1.5rem;
-  margin: 1.5rem;
+  font-size: 1.5vw;
+  margin: 1rem;
 `;
 
 const Details = styled.em`
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1vw;
   color: #555;
 `;
 
@@ -38,19 +40,24 @@ const Artist = styled.div`
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 1.5vw;
 `;
 
 function ArtPieceDetails(props) {
   const imageSize = useImageSize(
     props.dimensions.width,
     props.dimensions.height,
-    0.5
+    0.3
   );
 
   return (
     <Root>
       <Piece>
+        <FavoritButton
+          slug={props.slug}
+          artPieceInfo={props.artPieceInfo}
+          onToggleFavorite={props.onToggleFavorite}
+        />
         <Image
           src={props.imageSource}
           alt="art detail"
