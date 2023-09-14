@@ -46,7 +46,7 @@ export default function Navigation() {
     <Root>
       <Link href="/">Spotlight</Link>
       <Link href="/art-pieces">Art Pieces</Link>
-      <Link href="/favourites">Favourites</Link>
+      <Link href="/favorites">Favorites</Link>
     </Root>
   );
 }

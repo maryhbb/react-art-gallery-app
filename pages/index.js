@@ -8,7 +8,11 @@ const Root = styled.main`
   align-items: center;
 `;
 
-export default function SpotlightPage({ data, artPieceInfo, onToggleFavorite }) {
+export default function SpotlightPage({
+  data,
+  artPieceInfo,
+  onToggleFavorite,
+}) {
   const randomPiece = data[Math.trunc(Math.random() * data.length)];
 
   return (
@@ -20,6 +24,7 @@ export default function SpotlightPage({ data, artPieceInfo, onToggleFavorite }) 
         height={randomPiece.dimensions.height}
         artPieceInfo={artPieceInfo}
         onToggleFavorite={onToggleFavorite}
+        slug={randomPiece.slug}
       />
     </Root>
   );
